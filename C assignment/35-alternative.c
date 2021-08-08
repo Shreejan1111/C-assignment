@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void mulMatrixBy3(int **matrixPtr, int noRow, int noCol);
+
 int main() {
 	int i, j;
 	int noRow, noCol, **matrixPtr;
@@ -37,11 +39,7 @@ int main() {
 	}
 
 	/* Multiply each values of the matrix by 3 */
-	for (i = 0; i < noRow; i++) {
-		for (j = 0; j < noCol; j++) {
-			matrixPtr[i][j] *= 3;
-		}
-	}
+	mulMatrixBy3(matrixPtr, noRow, noCol);
 
 	/* Print multiplied matrix */
 	puts("Matrix after multiplying by 3:");
@@ -59,4 +57,14 @@ int main() {
 	free(matrixPtr);
 
 	return 0;
+}
+
+void mulMatrixBy3(int **matrixPtr, int noRow, int noCol) {
+	int i, j;
+
+	for (i = 0; i < noRow; i++) {
+		for (j = 0; j < noCol; j++) {
+			matrixPtr[i][j] *= 3;
+		}
+	}
 }
