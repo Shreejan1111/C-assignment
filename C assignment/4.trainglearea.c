@@ -11,3 +11,4 @@ int main(){
 
     return 0;
 }
+//different editor ma different answer aauxa
